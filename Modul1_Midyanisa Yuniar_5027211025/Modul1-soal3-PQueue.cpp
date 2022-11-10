@@ -80,6 +80,9 @@ int main() {
     pqueue.push("struktur");
     pqueue.push("tugas");
     pqueue.push("ini");
+    char *temp;
+    scanf("%d", &temp);
+    pqueue.push(temp);
     while (!pqueue.isEmpty()) {
         printf("%s ", pqueue.front());
         pqueue.pop();

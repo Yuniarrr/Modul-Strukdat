@@ -75,6 +75,19 @@ struct PriorityQueue
             exit(-1);
     }
 
+    int reverseOrderPQueue()
+    {
+        if (!isEmpty())
+        {
+            PQueueNode *temp = _top;
+            while (temp->next != NULL)
+                temp = temp->next;
+            return temp->data;
+        }
+        else
+            exit(-1);
+    }
+
     unsigned size()
     {
         return _size;
@@ -103,20 +116,14 @@ int main(int argc, char const *argv[])
         }
         if (a == "LAYANI")
         {
-            pq.pop();
-            // cout << pq.top() << " ";
-            // if (pq.top() == num[1]) {
-            //     cout << num[0] << endl;
-            // }
+            pq.reverseOrderPQueue();
         }
         x++;
     }
     // cout << pq.top() << " ";
-
-    while (!pq.isEmpty())
-    {
-        cout << pq.top() << " ";
-        pq.pop();
-    }
+    pq.reverseOrderPQueue();
+    cout << pq.reverseOrderPQueue() << endl;
+    cout << pq.reverseOrderPQueue() << endl;
+    // cout << pq.reverseOrderPQueue() << endl;
     return 0;
 }
