@@ -316,7 +316,7 @@ void Graph::printSolutionWithDestination(int src, int dest, vector<int> dist, ve
     string s;
     string Tempat;
 
-    initwindow(800, 600, "Tugas Nama 5027211025");
+    initwindow(1200, 700, "Final Project - 5027211025");
 
     int n = dist.size();
     printf("Vertex\t Distance\tPath"); // Print the result
@@ -360,7 +360,7 @@ void Graph::printSolution(int src, vector<int> dist, vector<int> parent)
     int x, y;
     string s;
 
-    initwindow(800, 600, "Tugas Nama 5027211025");
+    initwindow(1200, 900, "Tugas Nama 5027211025");
 
     int n = dist.size();
     printf("Vertex\t Distance\tPath"); // Print the result
@@ -438,44 +438,67 @@ void Graph::printPath(int currentVertex, vector<int> parent)
 
 int main()
 {
-    int V = 9;          // vertices in given graph are 9
+    int V = 20;          // vertices in given graph are 9
     Graph g(V);         //  call Constructor by creating an object of graph
     g.addEdge(0, 1, 4); // add root node with neighour vertex and weight
-    g.addEdge(0, 7, 8);
-    g.addEdge(1, 2, 8);
-    g.addEdge(1, 7, 11);
-    g.addEdge(2, 3, 7);
-    g.addEdge(2, 8, 2);
-    g.addEdge(2, 5, 4);
+    g.addEdge(1, 2, 2);
+    g.addEdge(2, 3, 3);
     g.addEdge(3, 4, 9);
-    g.addEdge(3, 5, 14);
-    g.addEdge(4, 5, 10);
-    g.addEdge(5, 6, 2);
-    g.addEdge(6, 7, 1);
-    g.addEdge(6, 8, 6);
+    g.addEdge(4, 7, 5);
+    g.addEdge(4, 6, 4);
+    g.addEdge(7, 6, 4);
+    g.addEdge(7, 9, 3);
+    g.addEdge(6, 5, 5);
+    g.addEdge(5, 8, 6);
+    g.addEdge(8, 9, 7);
+    g.addEdge(8, 10, 12);
+    g.addEdge(10, 11, 5);
+    g.addEdge(11, 12, 6);
+    g.addEdge(12, 13, 2);
+    g.addEdge(12, 11, 6);
+    g.addEdge(11, 14, 4);
+    g.addEdge(14, 15, 1);
+    g.addEdge(15, 16, 2);
+    g.addEdge(16, 17, 6);
+    g.addEdge(17, 18, 2);
+    g.addEdge(13, 17, 5);
+    g.addEdge(18, 19, 4);
+    g.addEdge(19, 0, 11);
     g.addEdge(7, 8, 7);
+    
 
-    g.storeVertex(0, 100, 250, "A");
-    g.storeVertex(1, 200, 150, "B");
-    g.storeVertex(2, 300, 150, "C");
-    g.storeVertex(3, 400, 150, "D");
-    g.storeVertex(4, 500, 250, "E");
-    g.storeVertex(5, 400, 350, "F");
-    g.storeVertex(6, 300, 350, "G");
-    g.storeVertex(7, 200, 350, "H");
-    g.storeVertex(8, 300, 250, "I");
+    g.storeVertex(0, 75, 170, "Pangkalanbuun");
+    g.storeVertex(1, 170, 160, "Sampit");
+    g.storeVertex(2, 230, 140, "Palangkaraya");
+    g.storeVertex(3, 280, 200, "Banjarmasin");
+    g.storeVertex(4, 435, 70, "Balikpapan");
+    g.storeVertex(5, 840, 50, "Luwuk");
+    g.storeVertex(6, 642, 45, "Palu");
+    g.storeVertex(7, 600, 157, "Mamuju");
+    g.storeVertex(8, 820, 220, "Kediri");
+    g.storeVertex(9, 610, 300, "Makassar");
+    g.storeVertex(10, 1030, 497, "Dili");
+    g.storeVertex(11, 895, 636, "Kupang");
+    g.storeVertex(12, 665, 599, "Waingapu");
+    g.storeVertex(13, 595, 583, "Tambolaka");
+    g.storeVertex(14, 765, 544, "Ende");
+    g.storeVertex(15, 715, 537, "Bajawa");
+    g.storeVertex(16, 639, 515, "Labuan Bajo");
+    g.storeVertex(17, 394, 532, "Praya");
+    g.storeVertex(18, 322, 529, "Denpasar");
+    g.storeVertex(19, 154, 432, "Surabaya");
 
     g.tampilList();
     // g.shortestPathingraph(0); // call the function to find shortest path of graph
     // g.shortestPathingraphWithDestination(0, 5);
 
-    // string src, dest;
-    // cout << "Masukkan tempat awal : ";
-    // cin >> src;
-    // cout << "Masukkan tempat tujuan : ";
-    // cin >> dest;
+    string src, dest;
+    cout << "Masukkan Kota Asal : ";
+    cin >> src;
+    cout << "Masukkan Kota Tujuan : ";
+    cin >> dest;
 
-    g.shortestPathingraphWithDestination("A", "F");
+    g.shortestPathingraphWithDestination(src, dest);
     
     return 0;                 // end of main function()
 }
