@@ -3,8 +3,8 @@
 #include <graphics.h>
 using namespace std;
 
-#define INF 0x3f3f3f3f // The distance to other vertices is initialized as infinite
-// iPair ==> Integer Pair
+#define INF 0x3f3f3f3f
+
 typedef std::pair<int, int> iPair;
 
 class Vertex
